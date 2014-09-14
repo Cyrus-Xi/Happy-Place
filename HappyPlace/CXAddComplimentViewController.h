@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CXComplimentItem.h"
 
-@interface CXAddComplimentViewController : UIViewController
+@interface CXAddComplimentViewController : UIViewController <UITextViewDelegate>
 
 @property CXComplimentItem *complimentItem;
 

@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 - (IBAction)saveButton:(id)sender;
 
-
 @end
 
 @implementation CXAddComplimentViewController
@@ -33,13 +32,22 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        //self.textField.delegate = (id)self;
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
+    //[self.textField setDelegate:self];
     [super viewDidLoad];
+}
+
+// Not working.
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning
