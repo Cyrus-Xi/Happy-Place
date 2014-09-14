@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0805E8F019C2279F000B7D80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0805E8EF19C2279F000B7D80 /* Foundation.framework */; };
+		0805E8F219C2279F000B7D80 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0805E8F119C2279F000B7D80 /* CoreGraphics.framework */; };
+		0805E8F419C2279F000B7D80 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0805E8F319C2279F000B7D80 /* UIKit.framework */; };
+		0805E8FA19C2279F000B7D80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0805E8F819C2279F000B7D80 /* InfoPlist.strings */; };
+		0805E8FC19C2279F000B7D80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0805E8FB19C2279F000B7D80 /* main.m */; };
+		0805E90019C2279F000B7D80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0805E8FF19C2279F000B7D80 /* AppDelegate.m */; };
+		0805E90219C2279F000B7D80 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0805E90119C2279F000B7D80 /* Images.xcassets */; };
+		0805E90919C2279F000B7D80 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0805E90819C2279F000B7D80 /* XCTest.framework */; };
+		0805E90A19C2279F000B7D80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0805E8EF19C2279F000B7D80 /* Foundation.framework */; };
+		0805E90B19C2279F000B7D80 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0805E8F319C2279F000B7D80 /* UIKit.framework */; };
+		0805E91319C227A0000B7D80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0805E91119C227A0000B7D80 /* InfoPlist.strings */; };
+		0805E91519C227A0000B7D80 /* HappyPlaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0805E91419C227A0000B7D80 /* HappyPlaceTests.m */; };
+		0805E91F19C22842000B7D80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0805E91E19C22842000B7D80 /* Main.storyboard */; };
+		0805E92219C23AD3000B7D80 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0805E92119C23AD3000B7D80 /* UIPlaceHolderTextView.m */; };
+		0805E92519C24ACF000B7D80 /* AddComplimentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0805E92419C24ACF000B7D80 /* AddComplimentViewController.m */; };
+		0805E92819C24B9C000B7D80 /* ComplimentListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0805E92719C24B9C000B7D80 /* ComplimentListTableViewController.m */; };
+		0805E92B19C24F07000B7D80 /* ComplimentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0805E92A19C24F07000B7D80 /* ComplimentItem.m */; };
+		0805E92D19C25885000B7D80 /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0805E92C19C25885000B7D80 /* Data.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0805E90C19C227A0000B7D80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0805E8E419C2279F000B7D80 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0805E8EB19C2279F000B7D80;
+			remoteInfo = HappyPlace;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0805E8EC19C2279F000B7D80 /* HappyPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0805E8EF19C2279F000B7D80 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0805E8F119C2279F000B7D80 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0805E8F319C2279F000B7D80 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0805E8F719C2279F000B7D80 /* HappyPlace-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HappyPlace-Info.plist"; sourceTree = "<group>"; };
+		0805E8F919C2279F000B7D80 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0805E8FB19C2279F000B7D80 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0805E8FD19C2279F000B7D80 /* HappyPlace-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HappyPlace-Prefix.pch"; sourceTree = "<group>"; };
+		0805E8FE19C2279F000B7D80 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0805E8FF19C2279F000B7D80 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0805E90119C2279F000B7D80 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0805E90719C2279F000B7D80 /* HappyPlaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappyPlaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0805E90819C2279F000B7D80 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		0805E91019C227A0000B7D80 /* HappyPlaceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HappyPlaceTests-Info.plist"; sourceTree = "<group>"; };
+		0805E91219C227A0000B7D80 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0805E91419C227A0000B7D80 /* HappyPlaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HappyPlaceTests.m; sourceTree = "<group>"; };
+		0805E91E19C22842000B7D80 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		0805E92019C23AA5000B7D80 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPlaceHolderTextView.h; sourceTree = "<group>"; };
+		0805E92119C23AD3000B7D80 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceHolderTextView.m; sourceTree = "<group>"; };
+		0805E92319C24ACF000B7D80 /* AddComplimentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddComplimentViewController.h; sourceTree = "<group>"; };
+		0805E92419C24ACF000B7D80 /* AddComplimentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddComplimentViewController.m; sourceTree = "<group>"; };
+		0805E92619C24B9C000B7D80 /* ComplimentListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplimentListTableViewController.h; sourceTree = "<group>"; };
+		0805E92719C24B9C000B7D80 /* ComplimentListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplimentListTableViewController.m; sourceTree = "<group>"; };
+		0805E92919C24F07000B7D80 /* ComplimentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplimentItem.h; sourceTree = "<group>"; };
+		0805E92A19C24F07000B7D80 /* ComplimentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplimentItem.m; sourceTree = "<group>"; };
+		0805E92C19C25885000B7D80 /* Data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0805E8E919C2279F000B7D80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0805E8F219C2279F000B7D80 /* CoreGraphics.framework in Frameworks */,
+				0805E8F419C2279F000B7D80 /* UIKit.framework in Frameworks */,
+				0805E8F019C2279F000B7D80 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0805E90419C2279F000B7D80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0805E90919C2279F000B7D80 /* XCTest.framework in Frameworks */,
+				0805E90B19C2279F000B7D80 /* UIKit.framework in Frameworks */,
+				0805E90A19C2279F000B7D80 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0805E8E319C2279F000B7D80 = {
+			isa = PBXGroup;
+			children = (
+				0805E8F519C2279F000B7D80 /* HappyPlace */,
+				0805E90E19C227A0000B7D80 /* HappyPlaceTests */,
+				0805E8EE19C2279F000B7D80 /* Frameworks */,
+				0805E8ED19C2279F000B7D80 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0805E8ED19C2279F000B7D80 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0805E8EC19C2279F000B7D80 /* HappyPlace.app */,
+				0805E90719C2279F000B7D80 /* HappyPlaceTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0805E8EE19C2279F000B7D80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0805E8EF19C2279F000B7D80 /* Foundation.framework */,
+				0805E8F119C2279F000B7D80 /* CoreGraphics.framework */,
+				0805E8F319C2279F000B7D80 /* UIKit.framework */,
+				0805E90819C2279F000B7D80 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0805E8F519C2279F000B7D80 /* HappyPlace */ = {
+			isa = PBXGroup;
+			children = (
+				0805E8FE19C2279F000B7D80 /* AppDelegate.h */,
+				0805E8FF19C2279F000B7D80 /* AppDelegate.m */,
+				0805E91E19C22842000B7D80 /* Main.storyboard */,
+				0805E92619C24B9C000B7D80 /* ComplimentListTableViewController.h */,
+				0805E92719C24B9C000B7D80 /* ComplimentListTableViewController.m */,
+				0805E92319C24ACF000B7D80 /* AddComplimentViewController.h */,
+				0805E92419C24ACF000B7D80 /* AddComplimentViewController.m */,
+				0805E92019C23AA5000B7D80 /* UIPlaceHolderTextView.h */,
+				0805E92119C23AD3000B7D80 /* UIPlaceHolderTextView.m */,
+				0805E92919C24F07000B7D80 /* ComplimentItem.h */,
+				0805E92A19C24F07000B7D80 /* ComplimentItem.m */,
+				0805E90119C2279F000B7D80 /* Images.xcassets */,
+				0805E8F619C2279F000B7D80 /* Supporting Files */,
+			);
+			path = HappyPlace;
+			sourceTree = "<group>";
+		};
+		0805E8F619C2279F000B7D80 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0805E8F719C2279F000B7D80 /* HappyPlace-Info.plist */,
+				0805E8F819C2279F000B7D80 /* InfoPlist.strings */,
+				0805E8FB19C2279F000B7D80 /* main.m */,
+				0805E8FD19C2279F000B7D80 /* HappyPlace-Prefix.pch */,
+				0805E92C19C25885000B7D80 /* Data.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0805E90E19C227A0000B7D80 /* HappyPlaceTests */ = {
+			isa = PBXGroup;
+			children = (
+				0805E91419C227A0000B7D80 /* HappyPlaceTests.m */,
+				0805E90F19C227A0000B7D80 /* Supporting Files */,
+			);
+			path = HappyPlaceTests;
+			sourceTree = "<group>";
+		};
+		0805E90F19C227A0000B7D80 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0805E91019C227A0000B7D80 /* HappyPlaceTests-Info.plist */,
+				0805E91119C227A0000B7D80 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0805E8EB19C2279F000B7D80 /* HappyPlace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0805E91819C227A0000B7D80 /* Build configuration list for PBXNativeTarget "HappyPlace" */;
+			buildPhases = (
+				0805E8E819C2279F000B7D80 /* Sources */,
+				0805E8E919C2279F000B7D80 /* Frameworks */,
+				0805E8EA19C2279F000B7D80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HappyPlace;
+			productName = HappyPlace;
+			productReference = 0805E8EC19C2279F000B7D80 /* HappyPlace.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0805E90619C2279F000B7D80 /* HappyPlaceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0805E91B19C227A0000B7D80 /* Build configuration list for PBXNativeTarget "HappyPlaceTests" */;
+			buildPhases = (
+				0805E90319C2279F000B7D80 /* Sources */,
+				0805E90419C2279F000B7D80 /* Frameworks */,
+				0805E90519C2279F000B7D80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0805E90D19C227A0000B7D80 /* PBXTargetDependency */,
+			);
+			name = HappyPlaceTests;
+			productName = HappyPlaceTests;
+			productReference = 0805E90719C2279F000B7D80 /* HappyPlaceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0805E8E419C2279F000B7D80 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "___SURYC11___";
+				TargetAttributes = {
+					0805E90619C2279F000B7D80 = {
+						TestTargetID = 0805E8EB19C2279F000B7D80;
+					};
+				};
+			};
+			buildConfigurationList = 0805E8E719C2279F000B7D80 /* Build configuration list for PBXProject "HappyPlace" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0805E8E319C2279F000B7D80;
+			productRefGroup = 0805E8ED19C2279F000B7D80 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0805E8EB19C2279F000B7D80 /* HappyPlace */,
+				0805E90619C2279F000B7D80 /* HappyPlaceTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0805E8EA19C2279F000B7D80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0805E91F19C22842000B7D80 /* Main.storyboard in Resources */,
+				0805E8FA19C2279F000B7D80 /* InfoPlist.strings in Resources */,
+				0805E92D19C25885000B7D80 /* Data.plist in Resources */,
+				0805E90219C2279F000B7D80 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0805E90519C2279F000B7D80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0805E91319C227A0000B7D80 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0805E8E819C2279F000B7D80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0805E92B19C24F07000B7D80 /* ComplimentItem.m in Sources */,
+				0805E92519C24ACF000B7D80 /* AddComplimentViewController.m in Sources */,
+				0805E90019C2279F000B7D80 /* AppDelegate.m in Sources */,
+				0805E92219C23AD3000B7D80 /* UIPlaceHolderTextView.m in Sources */,
+				0805E8FC19C2279F000B7D80 /* main.m in Sources */,
+				0805E92819C24B9C000B7D80 /* ComplimentListTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0805E90319C2279F000B7D80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0805E91519C227A0000B7D80 /* HappyPlaceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0805E90D19C227A0000B7D80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0805E8EB19C2279F000B7D80 /* HappyPlace */;
+			targetProxy = 0805E90C19C227A0000B7D80 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0805E8F819C2279F000B7D80 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0805E8F919C2279F000B7D80 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0805E91119C227A0000B7D80 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0805E91219C227A0000B7D80 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0805E91619C227A0000B7D80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0805E91719C227A0000B7D80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0805E91919C227A0000B7D80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HappyPlace/HappyPlace-Prefix.pch";
+				INFOPLIST_FILE = "HappyPlace/HappyPlace-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0805E91A19C227A0000B7D80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HappyPlace/HappyPlace-Prefix.pch";
+				INFOPLIST_FILE = "HappyPlace/HappyPlace-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		0805E91C19C227A0000B7D80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HappyPlace.app/HappyPlace";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HappyPlace/HappyPlace-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HappyPlaceTests/HappyPlaceTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		0805E91D19C227A0000B7D80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HappyPlace.app/HappyPlace";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HappyPlace/HappyPlace-Prefix.pch";
+				INFOPLIST_FILE = "HappyPlaceTests/HappyPlaceTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0805E8E719C2279F000B7D80 /* Build configuration list for PBXProject "HappyPlace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0805E91619C227A0000B7D80 /* Debug */,
+				0805E91719C227A0000B7D80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0805E91819C227A0000B7D80 /* Build configuration list for PBXNativeTarget "HappyPlace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0805E91919C227A0000B7D80 /* Debug */,
+				0805E91A19C227A0000B7D80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0805E91B19C227A0000B7D80 /* Build configuration list for PBXNativeTarget "HappyPlaceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0805E91C19C227A0000B7D80 /* Debug */,
+				0805E91D19C227A0000B7D80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0805E8E419C2279F000B7D80 /* Project object */;
+}
