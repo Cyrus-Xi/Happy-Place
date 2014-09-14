@@ -9,11 +9,13 @@
 #import "CXComplimentListTableViewController.h"
 #import "CXComplimentItem.h"
 #import "CXAddComplimentViewController.h"
+#import "CXComplimentDetailViewController.h"
 
 @interface CXComplimentListTableViewController ()
 
 @property NSMutableArray *complimentItems;
 @property CXComplimentItem *complimentItem;
+@property NSString *complimentDetail;
 
 @end
 
@@ -146,6 +148,17 @@
     [self writeToPlistFile];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    // Get text of the selected compliment.
+    CXComplimentItem *compliment = [self.complimentItems objectAtIndex:[indexPath row]];
+    self.complimentDetail = compliment.itemText;
+    
+    // Perform segue.
+    [self performSegueWithIdentifier:@"DetailViewController" sender:self];
+}
+
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
@@ -162,16 +175,18 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.destinationViewController isKindOfClass:[CXComplimentDetailViewController class]]) {
+        // Configure ComplimentDetailViewController.
+        [(CXComplimentDetailViewController *)segue.destinationViewController setText:self.complimentDetail];
+        
+        // Reset compliment detail.
+        self.complimentDetail = nil;
+    }
 }
-*/
 
 -(void)writeToPlistFile {
     NSLog(@"listPath = %@", listPath);
