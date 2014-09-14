@@ -61,7 +61,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="F8R-2H-EBw" customClass="CXUIPlaceHolderTextView">
-                                <rect key="frame" x="20" y="10" width="280" height="441"/>
+                                <rect key="frame" x="11" y="10" width="299" height="498"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -71,9 +71,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="F8R-2H-EBw" firstAttribute="top" secondItem="HUv-i5-ly9" secondAttribute="bottom" constant="-54" id="HIS-I7-3SW"/>
-                            <constraint firstAttribute="trailing" secondItem="F8R-2H-EBw" secondAttribute="trailing" constant="20" id="IjO-bk-QwW"/>
-                            <constraint firstItem="F8R-2H-EBw" firstAttribute="leading" secondItem="KgU-Ft-RmW" secondAttribute="leading" constant="20" id="bmB-Eo-uuG"/>
-                            <constraint firstItem="g76-lq-Rr6" firstAttribute="top" secondItem="F8R-2H-EBw" secondAttribute="bottom" constant="117" id="nf7-p1-YmV"/>
+                            <constraint firstAttribute="trailing" secondItem="F8R-2H-EBw" secondAttribute="trailing" constant="10" id="IjO-bk-QwW"/>
+                            <constraint firstItem="F8R-2H-EBw" firstAttribute="leading" secondItem="KgU-Ft-RmW" secondAttribute="leading" constant="11" id="bmB-Eo-uuG"/>
+                            <constraint firstItem="g76-lq-Rr6" firstAttribute="top" secondItem="F8R-2H-EBw" secondAttribute="bottom" constant="60" id="nf7-p1-YmV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Compliment" id="RUD-xJ-LuV">
@@ -130,7 +130,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63r-hI-nAJ">
-                                <rect key="frame" x="13" y="10" width="295" height="459"/>
+                                <rect key="frame" x="13" y="10" width="295" height="489"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -141,7 +141,7 @@
                         <constraints>
                             <constraint firstItem="63r-hI-nAJ" firstAttribute="leading" secondItem="ddl-VA-mK0" secondAttribute="leading" constant="13" id="Zr3-n8-R5E"/>
                             <constraint firstAttribute="trailing" secondItem="63r-hI-nAJ" secondAttribute="trailing" constant="12" id="boM-9r-82o"/>
-                            <constraint firstItem="U53-JB-fjT" firstAttribute="top" secondItem="63r-hI-nAJ" secondAttribute="bottom" constant="99" id="lBV-4p-Mgq"/>
+                            <constraint firstItem="U53-JB-fjT" firstAttribute="top" secondItem="63r-hI-nAJ" secondAttribute="bottom" constant="69" id="lBV-4p-Mgq"/>
                             <constraint firstItem="63r-hI-nAJ" firstAttribute="top" secondItem="Wgx-5B-JKe" secondAttribute="bottom" constant="-54" id="xQD-Y6-Iz2"/>
                         </constraints>
                     </view>

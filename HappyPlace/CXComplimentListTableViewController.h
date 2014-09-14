@@ -13,13 +13,9 @@
 {
     NSString *listPath;
     NSMutableArray *listCompliments;
-    //ComplimentItem *complimentItem;
 }
 
-//- (IBAction)addItem:(id)sender;
 - (IBAction)writeToFile:(id)sender;
-
-//@property (nonatomic, strong) NSMutableArray *complimentList;
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue;
 

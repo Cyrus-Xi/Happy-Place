@@ -10,6 +10,6 @@
 
 @interface CXComplimentDetailViewController : UIViewController
 
-@property (nonatomic) NSString *text;
+@property (nonatomic) NSString *complimentText;
 
 @end

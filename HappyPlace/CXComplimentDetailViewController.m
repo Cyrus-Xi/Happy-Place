@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.detailText.text = _text;
+    self.detailText.text = _complimentText;
 }
 
 - (void)didReceiveMemoryWarning
