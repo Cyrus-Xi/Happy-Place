@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 ___SURYC11___. All rights reserved.
 //
 
-#import "ComplimentItem.h"
+#import "CXComplimentItem.h"
 
-@implementation ComplimentItem
+@implementation CXComplimentItem
 
 @end

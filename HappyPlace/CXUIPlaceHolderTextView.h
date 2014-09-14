@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UIPlaceHolderTextView : UITextView
+@interface CXUIPlaceHolderTextView : UITextView
 
 @property (nonatomic, retain) NSString *placeholder;
 @property (nonatomic, retain) UIColor *placeholderColor;

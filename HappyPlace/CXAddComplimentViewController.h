@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ComplimentItem.h"
+#import "CXComplimentItem.h"
 
-@interface AddComplimentViewController : UIViewController
+@interface CXAddComplimentViewController : UIViewController
 
-@property ComplimentItem *complimentItem;
+@property CXComplimentItem *complimentItem;
 
 @end

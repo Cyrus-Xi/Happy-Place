@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 ___SURYC11___. All rights reserved.
 //
 
-#import "AddComplimentViewController.h"
+#import "CXAddComplimentViewController.h"
 
-@interface AddComplimentViewController ()
+@interface CXAddComplimentViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *textField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
@@ -17,13 +17,13 @@
 
 @end
 
-@implementation AddComplimentViewController
+@implementation CXAddComplimentViewController
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if (sender != self.saveButton) return;
     if (self.textField.text.length > 0) {
-        self.complimentItem = [[ComplimentItem alloc] init];
+        self.complimentItem = [[CXComplimentItem alloc] init];
         self.complimentItem.itemText = self.textField.text;
     }
 }

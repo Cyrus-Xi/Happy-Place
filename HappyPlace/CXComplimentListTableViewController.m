@@ -6,18 +6,18 @@
 //  Copyright (c) 2014 ___SURYC11___. All rights reserved.
 //
 
-#import "ComplimentListTableViewController.h"
-#import "ComplimentItem.h"
-#import "AddComplimentViewController.h"
+#import "CXComplimentListTableViewController.h"
+#import "CXComplimentItem.h"
+#import "CXAddComplimentViewController.h"
 
-@interface ComplimentListTableViewController ()
+@interface CXComplimentListTableViewController ()
 
 @property NSMutableArray *complimentItems;
-@property ComplimentItem *complimentItem;
+@property CXComplimentItem *complimentItem;
 
 @end
 
-@implementation ComplimentListTableViewController
+@implementation CXComplimentListTableViewController
 
 // To simplify code. Returns documents directory path.
 -(NSString *)docsDir {
@@ -41,7 +41,7 @@
     
     // Convert the strings in listCompliments to complimentItems.
     for (NSString *text in listCompliments) {
-        self.complimentItem = [[ComplimentItem alloc] init];
+        self.complimentItem = [[CXComplimentItem alloc] init];
         self.complimentItem.itemText = text;
         [self.complimentItems addObject:self.complimentItem];
     }
@@ -54,8 +54,8 @@
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue
 {
-    AddComplimentViewController *source = [segue sourceViewController];
-    ComplimentItem *item = source.complimentItem;
+    CXAddComplimentViewController *source = [segue sourceViewController];
+    CXComplimentItem *item = source.complimentItem;
     if (item != nil) {
         [self.complimentItems addObject:item];
         [self.tableView reloadData];
@@ -84,7 +84,7 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -110,7 +110,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
-    ComplimentItem *complimentItem = [self.complimentItems objectAtIndex:indexPath.row];
+    CXComplimentItem *complimentItem = [self.complimentItems objectAtIndex:indexPath.row];
     cell.textLabel.text = complimentItem.itemText;
     
     return cell;
@@ -179,7 +179,7 @@
     NSString *newComplimentString = [[NSString alloc] init];
     
     // Convert complimentItems back to strings for writing to plist file.
-    for (ComplimentItem *item in self.complimentItems) {
+    for (CXComplimentItem *item in self.complimentItems) {
         newComplimentString = item.itemText;
         [newListCompliments addObject:newComplimentString];
     }

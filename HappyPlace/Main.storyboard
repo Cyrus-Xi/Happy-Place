@@ -7,21 +7,21 @@
         <!--Compliment List Table View Controller - My Compliments-->
         <scene sceneID="p7S-bP-uBk">
             <objects>
-                <tableViewController id="flN-QF-Yua" customClass="ComplimentListTableViewController" sceneMemberID="viewController">
+                <tableViewController id="flN-QF-Yua" customClass="CXComplimentListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="O9v-UG-PbB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListPrototypeCell" textLabel="AHH-jJ-cjY" rowHeight="40" style="IBUITableViewCellStyleDefault" id="rCb-XD-QJ8">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListPrototypeCell" editingAccessoryType="disclosureIndicator" textLabel="AHH-jJ-cjY" rowHeight="40" style="IBUITableViewCellStyleDefault" id="rCb-XD-QJ8">
                                 <rect key="frame" x="0.0" y="86" width="320" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rCb-XD-QJ8" id="0JB-Ev-R42">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="39"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Power/weight, you are a freak of nature." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AHH-jJ-cjY">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="39"/>
+                                            <rect key="frame" x="15" y="0.0" width="270" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -48,7 +48,7 @@
         <!--Add Compliment View Controller - Add Compliment-->
         <scene sceneID="tog-ii-CaO">
             <objects>
-                <viewController id="Beg-Wo-cBx" customClass="AddComplimentViewController" sceneMemberID="viewController">
+                <viewController id="Beg-Wo-cBx" customClass="CXAddComplimentViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HUv-i5-ly9"/>
                         <viewControllerLayoutGuide type="bottom" id="g76-lq-Rr6"/>
@@ -57,7 +57,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="F8R-2H-EBw" customClass="UIPlaceHolderTextView">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="F8R-2H-EBw" customClass="CXUIPlaceHolderTextView">
                                 <rect key="frame" x="20" y="97" width="280" height="441"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="0.96594729657496814" blue="0.8480265036252943" alpha="1" colorSpace="calibratedRGB"/>

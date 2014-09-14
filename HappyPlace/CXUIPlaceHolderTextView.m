@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 ___SURYC11___. All rights reserved.
 //
 
-#import "UIPlaceHolderTextView.h"
+#import "CXUIPlaceHolderTextView.h"
 
-@interface UIPlaceHolderTextView ()
+@interface CXUIPlaceHolderTextView ()
 
 @property (nonatomic, retain) UILabel *placeHolderLabel;
 
 @end
 
-@implementation UIPlaceHolderTextView
+@implementation CXUIPlaceHolderTextView
 
 CGFloat const UI_PLACEHOLDER_TEXT_CHANGED_ANIMATION_DURATION = 0.25;
 

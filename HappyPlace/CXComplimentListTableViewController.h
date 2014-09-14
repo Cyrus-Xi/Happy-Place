@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ComplimentItem.h"
+#import "CXComplimentItem.h"
 
-@interface ComplimentListTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface CXComplimentListTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 {
     NSString *listPath;
     NSMutableArray *listCompliments;

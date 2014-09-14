@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ComplimentItem : NSObject
+@interface CXComplimentItem : NSObject
 
 @property NSString *itemText;
 //@property NSString *itemAuthor;

@@ -20,10 +20,10 @@
 		0805E91319C227A0000B7D80 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0805E91119C227A0000B7D80 /* InfoPlist.strings */; };
 		0805E91519C227A0000B7D80 /* HappyPlaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0805E91419C227A0000B7D80 /* HappyPlaceTests.m */; };
 		0805E91F19C22842000B7D80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0805E91E19C22842000B7D80 /* Main.storyboard */; };
-		0805E92219C23AD3000B7D80 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0805E92119C23AD3000B7D80 /* UIPlaceHolderTextView.m */; };
-		0805E92519C24ACF000B7D80 /* AddComplimentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0805E92419C24ACF000B7D80 /* AddComplimentViewController.m */; };
-		0805E92819C24B9C000B7D80 /* ComplimentListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0805E92719C24B9C000B7D80 /* ComplimentListTableViewController.m */; };
-		0805E92B19C24F07000B7D80 /* ComplimentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0805E92A19C24F07000B7D80 /* ComplimentItem.m */; };
+		0805E92219C23AD3000B7D80 /* CXUIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0805E92119C23AD3000B7D80 /* CXUIPlaceHolderTextView.m */; };
+		0805E92519C24ACF000B7D80 /* CXAddComplimentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0805E92419C24ACF000B7D80 /* CXAddComplimentViewController.m */; };
+		0805E92819C24B9C000B7D80 /* CXComplimentListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0805E92719C24B9C000B7D80 /* CXComplimentListTableViewController.m */; };
+		0805E92B19C24F07000B7D80 /* CXComplimentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0805E92A19C24F07000B7D80 /* CXComplimentItem.m */; };
 		0805E92D19C25885000B7D80 /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0805E92C19C25885000B7D80 /* Data.plist */; };
 /* End PBXBuildFile section */
 
@@ -55,14 +55,14 @@
 		0805E91219C227A0000B7D80 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0805E91419C227A0000B7D80 /* HappyPlaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HappyPlaceTests.m; sourceTree = "<group>"; };
 		0805E91E19C22842000B7D80 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		0805E92019C23AA5000B7D80 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPlaceHolderTextView.h; sourceTree = "<group>"; };
-		0805E92119C23AD3000B7D80 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPlaceHolderTextView.m; sourceTree = "<group>"; };
-		0805E92319C24ACF000B7D80 /* AddComplimentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddComplimentViewController.h; sourceTree = "<group>"; };
-		0805E92419C24ACF000B7D80 /* AddComplimentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddComplimentViewController.m; sourceTree = "<group>"; };
-		0805E92619C24B9C000B7D80 /* ComplimentListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplimentListTableViewController.h; sourceTree = "<group>"; };
-		0805E92719C24B9C000B7D80 /* ComplimentListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplimentListTableViewController.m; sourceTree = "<group>"; };
-		0805E92919C24F07000B7D80 /* ComplimentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplimentItem.h; sourceTree = "<group>"; };
-		0805E92A19C24F07000B7D80 /* ComplimentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplimentItem.m; sourceTree = "<group>"; };
+		0805E92019C23AA5000B7D80 /* CXUIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXUIPlaceHolderTextView.h; sourceTree = "<group>"; };
+		0805E92119C23AD3000B7D80 /* CXUIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXUIPlaceHolderTextView.m; sourceTree = "<group>"; };
+		0805E92319C24ACF000B7D80 /* CXAddComplimentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXAddComplimentViewController.h; sourceTree = "<group>"; };
+		0805E92419C24ACF000B7D80 /* CXAddComplimentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXAddComplimentViewController.m; sourceTree = "<group>"; };
+		0805E92619C24B9C000B7D80 /* CXComplimentListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXComplimentListTableViewController.h; sourceTree = "<group>"; };
+		0805E92719C24B9C000B7D80 /* CXComplimentListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXComplimentListTableViewController.m; sourceTree = "<group>"; };
+		0805E92919C24F07000B7D80 /* CXComplimentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXComplimentItem.h; sourceTree = "<group>"; };
+		0805E92A19C24F07000B7D80 /* CXComplimentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXComplimentItem.m; sourceTree = "<group>"; };
 		0805E92C19C25885000B7D80 /* Data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,14 +126,14 @@
 				0805E8FE19C2279F000B7D80 /* AppDelegate.h */,
 				0805E8FF19C2279F000B7D80 /* AppDelegate.m */,
 				0805E91E19C22842000B7D80 /* Main.storyboard */,
-				0805E92619C24B9C000B7D80 /* ComplimentListTableViewController.h */,
-				0805E92719C24B9C000B7D80 /* ComplimentListTableViewController.m */,
-				0805E92319C24ACF000B7D80 /* AddComplimentViewController.h */,
-				0805E92419C24ACF000B7D80 /* AddComplimentViewController.m */,
-				0805E92019C23AA5000B7D80 /* UIPlaceHolderTextView.h */,
-				0805E92119C23AD3000B7D80 /* UIPlaceHolderTextView.m */,
-				0805E92919C24F07000B7D80 /* ComplimentItem.h */,
-				0805E92A19C24F07000B7D80 /* ComplimentItem.m */,
+				0805E92619C24B9C000B7D80 /* CXComplimentListTableViewController.h */,
+				0805E92719C24B9C000B7D80 /* CXComplimentListTableViewController.m */,
+				0805E92319C24ACF000B7D80 /* CXAddComplimentViewController.h */,
+				0805E92419C24ACF000B7D80 /* CXAddComplimentViewController.m */,
+				0805E92019C23AA5000B7D80 /* CXUIPlaceHolderTextView.h */,
+				0805E92119C23AD3000B7D80 /* CXUIPlaceHolderTextView.m */,
+				0805E92919C24F07000B7D80 /* CXComplimentItem.h */,
+				0805E92A19C24F07000B7D80 /* CXComplimentItem.m */,
 				0805E90119C2279F000B7D80 /* Images.xcassets */,
 				0805E8F619C2279F000B7D80 /* Supporting Files */,
 			);
@@ -267,12 +267,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0805E92B19C24F07000B7D80 /* ComplimentItem.m in Sources */,
-				0805E92519C24ACF000B7D80 /* AddComplimentViewController.m in Sources */,
+				0805E92B19C24F07000B7D80 /* CXComplimentItem.m in Sources */,
+				0805E92519C24ACF000B7D80 /* CXAddComplimentViewController.m in Sources */,
 				0805E90019C2279F000B7D80 /* AppDelegate.m in Sources */,
-				0805E92219C23AD3000B7D80 /* UIPlaceHolderTextView.m in Sources */,
+				0805E92219C23AD3000B7D80 /* CXUIPlaceHolderTextView.m in Sources */,
 				0805E8FC19C2279F000B7D80 /* main.m in Sources */,
-				0805E92819C24B9C000B7D80 /* ComplimentListTableViewController.m in Sources */,
+				0805E92819C24B9C000B7D80 /* CXComplimentListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +469,7 @@
 				0805E91A19C227A0000B7D80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0805E91B19C227A0000B7D80 /* Build configuration list for PBXNativeTarget "HappyPlaceTests" */ = {
 			isa = XCConfigurationList;
@@ -477,6 +478,7 @@
 				0805E91D19C227A0000B7D80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
