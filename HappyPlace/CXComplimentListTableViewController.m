@@ -68,6 +68,9 @@
         [self.complimentItems addObject:item];
         [self.tableView reloadData];
         [self writeToFile:item];
+        if ([self.complimentItems count] == 1) {
+            [self setRandomNotification];
+        }
         //[self setRandomNotification];
     }
 }
@@ -90,21 +93,9 @@
     [self loadInitialData];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(applicationDidBecomeActive:)
-                                                 name:UIApplicationDidBecomeActiveNotification
+                                             selector:@selector(applicationDidEnterBackground:)
+                                                 name:UIApplicationDidEnterBackgroundNotification
                                                object:nil];
-
-    
-    /*
-    NSInteger notificationsCount = [[[UIApplication sharedApplication] scheduledLocalNotifications] count];
-    
-    NSLog(@"Number of notifications: %ld", (long)notificationsCount);
-    NSLog(@"Number of compliments: %lu", (unsigned long)[self.complimentItems count]);
-    
-    if ( ([self.complimentItems count] >= 1) && (notificationsCount == 0) ) {
-        [self setRandomNotification];
-    }
-     */
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
@@ -225,15 +216,25 @@
 
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application
+// Set random notification when enter background, not when enter foreground or become active,
+// to guard against edge case where user deletes last compliment but still gets sent it as a
+// notification.
+- (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    NSLog(@"Setting random notif");
-    [self setRandomNotification];
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+     NSInteger notificationsCount = [[[UIApplication sharedApplication] scheduledLocalNotifications] count];
+     
+     NSLog(@"Number of notifications: %ld", (long)notificationsCount);
+     NSLog(@"Number of compliments: %lu", (unsigned long)[self.complimentItems count]);
+     
+     if ( ([self.complimentItems count] >= 1) && (notificationsCount == 0) ) {
+         NSLog(@"Setting random notif");
+         [self setRandomNotification];
+     }
+    
 }
 
-// Check for edge case where "ran out of" notifications (i.e., user hasn't added new
-// compliments in awhile) and add new notification with random existent compliment.
+// Set local notification 2 days from last scheduled notification at random time with random
+// compliment body.
 -(void)setRandomNotification {
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     
@@ -344,7 +345,7 @@
 
 -(void)dealloc {
     NSLog(@"Deallocating notif center");
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
 }
 
 @end
