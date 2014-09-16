@@ -68,7 +68,7 @@
         [self.complimentItems addObject:item];
         [self.tableView reloadData];
         [self writeToFile:item];
-        [self setNotification:item];
+        //[self setRandomNotification];
     }
 }
 
@@ -89,10 +89,23 @@
     
     [self loadInitialData];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationDidBecomeActive:)
+                                                 name:UIApplicationDidBecomeActiveNotification
+                                               object:nil];
+
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    /*
+    NSInteger notificationsCount = [[[UIApplication sharedApplication] scheduledLocalNotifications] count];
+    
+    NSLog(@"Number of notifications: %ld", (long)notificationsCount);
+    NSLog(@"Number of compliments: %lu", (unsigned long)[self.complimentItems count]);
+    
+    if ( ([self.complimentItems count] >= 1) && (notificationsCount == 0) ) {
+        [self setRandomNotification];
+    }
+     */
+    
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
@@ -129,7 +142,6 @@
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
     return YES;
 }
 
@@ -213,25 +225,42 @@
 
 }
 
-- (IBAction)setNotification:(id)sender {
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    NSLog(@"Setting random notif");
+    [self setRandomNotification];
+    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+}
+
+// Check for edge case where "ran out of" notifications (i.e., user hasn't added new
+// compliments in awhile) and add new notification with random existent compliment.
+-(void)setRandomNotification {
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     
+    // Could probably simplify this.
     NSDate *startDate = [[NSDate alloc] init];
     NSDate *endDate = [[NSDate alloc] init];
     NSDate *randomDate = [[NSDate alloc] init];
     NSTimeInterval randomInterval = 1;
     
-    // If first time setting notification, use date one day from now
+    NSInteger lowerBound = 0;
+    NSInteger upperBound = [self.complimentItems count];
+    NSInteger randomInt = lowerBound + arc4random() % (upperBound - lowerBound);
+    
+    // Test random integer.
+    NSLog(@"Random int: %ld", (long)randomInt);
+    
+    // If first time setting notification, use date 2 days from now.
     if (self.lastDate == nil) {
-        randomDate = [randomDate initWithTimeIntervalSinceNow:86400];
+        randomDate = [randomDate initWithTimeIntervalSinceNow:172800];
     }
     else {
-        // First establish boundaries: earlist at 1 day - 3 hrs from last date and latest
-        // at 1 day + 3 hrs from last date. Then use that interval to get a random interval.
+        // First establish boundaries: earliest at 2 days - 4 hrs from last date and latest
+        // at 2 days + 4 hrs from last date. Then use that interval to get a random interval.
         // Finally, add the random interval to the earliest date boundary to get a random
         // date.
-        startDate = [startDate initWithTimeInterval:75600 sinceDate:self.lastDate];
-        endDate = [endDate initWithTimeInterval:97200 sinceDate:self.lastDate];
+        startDate = [startDate initWithTimeInterval:158400 sinceDate:self.lastDate];
+        endDate = [endDate initWithTimeInterval:187200 sinceDate:self.lastDate];
         NSTimeInterval intervalTimeBlock = [endDate timeIntervalSinceDate:startDate];
         randomInterval = ((NSTimeInterval)arc4random() / ARC4RANDOM_MAX) * intervalTimeBlock;
         randomDate = [startDate dateByAddingTimeInterval:randomInterval];
@@ -246,21 +275,58 @@
     NSLog(@"Random date: %@", randomDate);
     NSLog(@"New last date: %@", self.lastDate);
     
+    NSDate *test = [[NSDate alloc] init];
+    test = [test initWithTimeIntervalSinceNow:20];
+    self.lastDate = test;
     
-    /*
-    // Convert to time interval then to number.
-    NSTimeInterval *lastDateInInterval = [lastDateTime timeIntervalSinceReferenceDate];
+    //localNotification.fireDate = randomDate;
+    localNotification.fireDate = test;
+    CXComplimentItem *randomCompliment = [self.complimentItems objectAtIndex:randomInt];
+    localNotification.alertBody = randomCompliment.itemText;
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    //localNotification.applicationIconBadgeNumber = 1;
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+
+}
+
+/*
+- (IBAction)setNotification:(id)sender {
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
     
-    // Set notification for some time during day after last set notification date.
+    // Could probably simplify this.
+    NSDate *startDate = [[NSDate alloc] init];
+    NSDate *endDate = [[NSDate alloc] init];
+    NSDate *randomDate = [[NSDate alloc] init];
+    NSTimeInterval randomInterval = 1;
     
-    // Earliest is one day - 3 hours. Latest is one day + 3 hours.
-    NSInteger *earlyTimeBoundary = lastDateTime + 75600;
-    NSInteger *lateTimeBoundary = lastDateTime + 97200;
-    */
+    // If first time setting notification, use date 2 days from now.
+    if (self.lastDate == nil) {
+        randomDate = [randomDate initWithTimeIntervalSinceNow:172800];
+    }
+    else {
+        // First establish boundaries: earliest at 2 days - 4 hrs from last date and latest
+        // at 2 days + 4 hrs from last date. Then use that interval to get a random interval.
+        // Finally, add the random interval to the earliest date boundary to get a random
+        // date.
+        startDate = [startDate initWithTimeInterval:158400 sinceDate:self.lastDate];
+        endDate = [endDate initWithTimeInterval:187200 sinceDate:self.lastDate];
+        NSTimeInterval intervalTimeBlock = [endDate timeIntervalSinceDate:startDate];
+        randomInterval = ((NSTimeInterval)arc4random() / ARC4RANDOM_MAX) * intervalTimeBlock;
+        randomDate = [startDate dateByAddingTimeInterval:randomInterval];
+    }
+    
+    NSLog(@"Last date: %@", self.lastDate);
+    self.lastDate = randomDate;
+    
+    NSLog(@"Start date: %@", startDate);
+    NSLog(@"End date: %@", endDate);
+    NSLog(@"Random interval: %f", randomInterval);
+    NSLog(@"Random date: %@", randomDate);
+    NSLog(@"New last date: %@", self.lastDate);
     
     NSDate *test = [[NSDate alloc] init];
-    test = [test initWithTimeIntervalSinceNow:30];
-    
+    test = [test initWithTimeIntervalSinceNow:20];
+    self.lastDate = test;
     //localNotification.fireDate = randomDate;
     localNotification.fireDate = test;
     CXComplimentItem *lastCompliment = [self.complimentItems objectAtIndex:[self.complimentItems count]-1];
@@ -270,8 +336,15 @@
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
 }
+ */
 
 - (IBAction)writeToFile:(id)sender {
     [self writeToPlistFile];
 }
+
+-(void)dealloc {
+    NSLog(@"Deallocating notif center");
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
+}
+
 @end
