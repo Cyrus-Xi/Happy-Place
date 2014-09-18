@@ -1,9 +1,11 @@
 //
-//  UIPlaceHolderTextView.h
+//  CXUIPlaceHolderTextView.h
 //  HappyPlace
 //
 //  Created by Cyrus Xi on 9/11/14.
 //  Copyright (c) 2014 ___SURYC11___. All rights reserved.
+//
+//  From the top answer here: http://stackoverflow.com/questions/1328638/placeholder-in-uitextview
 //
 
 #import <Foundation/Foundation.h>

@@ -1,5 +1,5 @@
 //
-//  ComplimentItem.h
+//  CXComplimentItem.h
 //  HappyPlace
 //
 //  Created by Cyrus Xi on 9/11/14.

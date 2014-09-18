@@ -34,7 +34,7 @@
                         <sections/>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Compliments" id="Pws-J9-8df">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="p9o-5d-P2A">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="p9o-5d-P2A">
                             <connections>
                                 <segue destination="0wC-nR-4wP" kind="modal" id="W1S-rJ-A1V"/>
                             </connections>

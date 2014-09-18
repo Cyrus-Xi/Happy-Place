@@ -1,5 +1,5 @@
 //
-//  AddComplimentViewController.m
+//  CXAddComplimentViewController.m
 //  HappyPlace
 //
 //  Created by Cyrus Xi on 9/11/14.
