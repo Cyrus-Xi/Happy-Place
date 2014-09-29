@@ -280,8 +280,8 @@
     test = [test initWithTimeIntervalSinceNow:20];
     self.lastDate = test;
     
-    //localNotification.fireDate = randomDate;
-    localNotification.fireDate = test;
+    localNotification.fireDate = randomDate;
+    //localNotification.fireDate = test;
     CXComplimentItem *randomCompliment = [self.complimentItems objectAtIndex:randomInt];
     localNotification.alertBody = randomCompliment.itemText;
     localNotification.soundName = UILocalNotificationDefaultSoundName;
