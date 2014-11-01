@@ -130,7 +130,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63r-hI-nAJ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="63r-hI-nAJ">
                                 <rect key="frame" x="12" y="9" width="297" height="518"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -145,12 +145,20 @@
                             <constraint firstItem="63r-hI-nAJ" firstAttribute="centerX" secondItem="ddl-VA-mK0" secondAttribute="centerX" id="QcF-lD-P8h"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Compliment Detail" id="SWa-PA-s4G"/>
+                    <navigationItem key="navigationItem" title="Compliment Detail" id="SWa-PA-s4G">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="7iw-va-ZOq">
+                            <connections>
+                                <segue destination="srg-bG-ATt" kind="unwind" unwindAction="unwindAndUpdate:" id="oc4-4Z-hCe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="detailText" destination="63r-hI-nAJ" id="17U-Mm-CUm"/>
+                        <outlet property="saveButton" destination="7iw-va-ZOq" id="elQ-ja-5oq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w1t-Nt-r1W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="srg-bG-ATt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="575" y="413"/>
         </scene>
