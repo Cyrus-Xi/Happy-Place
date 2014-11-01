@@ -186,6 +186,7 @@
     }
 }
 
+// To make data persistent.
 -(void)writeToPlistFile {
     NSLog(@"listPath = %@", listPath);
     NSMutableArray *newListCompliments = [[NSMutableArray alloc] init];
@@ -226,8 +227,7 @@
 // compliment body.
 -(void)setRandomNotification {
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-    
-    // Could probably simplify this.
+
     NSDate *startDate = [[NSDate alloc] init];
     NSDate *endDate = [[NSDate alloc] init];
     NSDate *randomDate = [[NSDate alloc] init];
@@ -236,9 +236,6 @@
     NSInteger lowerBound = 0;
     NSInteger upperBound = [self.complimentItems count];
     NSInteger randomInt = lowerBound + arc4random() % (upperBound - lowerBound);
-    
-    // Test random integer.
-    NSLog(@"Random int: %ld", (long)randomInt);
     
     // If first time setting notification, use date 2 days from now.
     if (self.lastDate == nil) {
@@ -267,66 +264,16 @@
     
     NSDate *test = [[NSDate alloc] init];
     test = [test initWithTimeIntervalSinceNow:20];
-    self.lastDate = test;
+    //self.lastDate = test;
     
     localNotification.fireDate = randomDate;
     //localNotification.fireDate = test;
     CXComplimentItem *randomCompliment = [self.complimentItems objectAtIndex:randomInt];
     localNotification.alertBody = randomCompliment.itemText;
     localNotification.soundName = UILocalNotificationDefaultSoundName;
-    //localNotification.applicationIconBadgeNumber = 1;
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
 }
-
-/*
- - (IBAction)setNotification:(id)sender {
- UILocalNotification *localNotification = [[UILocalNotification alloc] init];
- 
- // Could probably simplify this.
- NSDate *startDate = [[NSDate alloc] init];
- NSDate *endDate = [[NSDate alloc] init];
- NSDate *randomDate = [[NSDate alloc] init];
- NSTimeInterval randomInterval = 1;
- 
- // If first time setting notification, use date 2 days from now.
- if (self.lastDate == nil) {
- randomDate = [randomDate initWithTimeIntervalSinceNow:172800];
- }
- else {
- // First establish boundaries: earliest at 2 days - 4 hrs from last date and latest
- // at 2 days + 4 hrs from last date. Then use that interval to get a random interval.
- // Finally, add the random interval to the earliest date boundary to get a random
- // date.
- startDate = [startDate initWithTimeInterval:158400 sinceDate:self.lastDate];
- endDate = [endDate initWithTimeInterval:187200 sinceDate:self.lastDate];
- NSTimeInterval intervalTimeBlock = [endDate timeIntervalSinceDate:startDate];
- randomInterval = ((NSTimeInterval)arc4random() / ARC4RANDOM_MAX) * intervalTimeBlock;
- randomDate = [startDate dateByAddingTimeInterval:randomInterval];
- }
- 
- NSLog(@"Last date: %@", self.lastDate);
- self.lastDate = randomDate;
- 
- NSLog(@"Start date: %@", startDate);
- NSLog(@"End date: %@", endDate);
- NSLog(@"Random interval: %f", randomInterval);
- NSLog(@"Random date: %@", randomDate);
- NSLog(@"New last date: %@", self.lastDate);
- 
- NSDate *test = [[NSDate alloc] init];
- test = [test initWithTimeIntervalSinceNow:20];
- self.lastDate = test;
- //localNotification.fireDate = randomDate;
- localNotification.fireDate = test;
- CXComplimentItem *lastCompliment = [self.complimentItems objectAtIndex:[self.complimentItems count]-1];
- localNotification.alertBody = lastCompliment.itemText;
- localNotification.soundName = UILocalNotificationDefaultSoundName;
- //localNotification.applicationIconBadgeNumber = 1;
- [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
- 
- }
- */
 
 - (IBAction)writeToFile:(id)sender {
     [self writeToPlistFile];
