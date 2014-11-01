@@ -13,10 +13,20 @@
 {
     NSString *listPath;
     NSMutableArray *listCompliments;
+    
 }
+
+@property NSMutableArray *complimentItems;
+@property CXComplimentItem *complimentItem;
+@property NSInteger index;
+@property NSString *complimentDetail;
+@property NSDate *lastDate;
+@property NSMutableArray *listDates;
 
 - (IBAction)writeToFile:(id)sender;
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue;
+
+- (IBAction)unwindAndUpdate:(UIStoryboardSegue *)segue;
 
 @end

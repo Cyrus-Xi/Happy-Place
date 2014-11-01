@@ -13,19 +13,7 @@
 
 #define ARC4RANDOM_MAX 0x100000000
 
-@interface CXComplimentListTableViewController ()
-
-@property NSMutableArray *complimentItems;
-@property CXComplimentItem *complimentItem;
-@property NSString *complimentDetail;
-@property NSDate *lastDate;
-@property NSMutableArray *listDates;
-
-@end
-
 @implementation CXComplimentListTableViewController
-
-
 
 // To simplify code. Returns documents directory path.
 -(NSString *)docsDir {
@@ -54,12 +42,10 @@
         [self.complimentItems addObject:self.complimentItem];
     }
     
-    NSLog(@"complimentItems: %@\n", self.complimentItems);
-    NSLog(@"listCompliments: %@\n", listCompliments);
-    
     NSLog(@"Count: %lu", (unsigned long)[listCompliments count]);
 }
 
+// For AddViewController where user adds a new compliment.
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue
 {
     CXAddComplimentViewController *source = [segue sourceViewController];
@@ -71,16 +57,33 @@
         if ([self.complimentItems count] == 1) {
             [self setRandomNotification];
         }
-        //[self setRandomNotification];
     }
+}
+
+// For DetailViewController where user edits an existing compliment.
+- (IBAction)unwindAndUpdate:(UIStoryboardSegue *)segue
+{
+    CXComplimentDetailViewController *source = [segue sourceViewController];
+    CXComplimentItem *item = source.complimentItem;
+    self.index = source.indexCompliment;
+    // Make sure item is existent and that the index falls in bounds.
+    if (item != nil && _index >= 0 && _index < [_complimentItems count]) {
+        // Replace compliment with edited one.
+        // If user hasn't actually changed compliment but still tapped "Save",
+        // still gets expected behavior.
+        [self.complimentItems replaceObjectAtIndex:_index withObject:item];
+        [self.tableView reloadData];
+        [self writeToFile:item];
+        if ([self.complimentItems count] == 1) {
+            [self setRandomNotification];
+        }
+    }
+    
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
     return self;
 }
 
@@ -89,7 +92,6 @@
     [super viewDidLoad];
     
     self.complimentItems = [[NSMutableArray alloc] init];
-    
     [self loadInitialData];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -161,29 +163,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    // Get text of the selected compliment.
-    CXComplimentItem *compliment = [self.complimentItems objectAtIndex:[indexPath row]];
-    self.complimentDetail = compliment.itemText;
+    // Get text and index of the selected compliment.
+    self.index = indexPath.row;
+    self.complimentItem = [self.complimentItems objectAtIndex:self.index];
+    self.complimentDetail = self.complimentItem.itemText;
     
     // Perform segue.
     [self performSegueWithIdentifier:@"DetailViewController" sender:self];
 }
 
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
 
 #pragma mark - Navigation
 
@@ -191,12 +179,14 @@
     if ([segue.destinationViewController isKindOfClass:[CXComplimentDetailViewController class]]) {
         // Configure ComplimentDetailViewController.
         [(CXComplimentDetailViewController *)segue.destinationViewController setComplimentText:self.complimentDetail];
+        [(CXComplimentDetailViewController *)segue.destinationViewController setIndexCompliment:self.index];
         
         // Reset compliment detail.
         self.complimentDetail = nil;
     }
 }
 
+// To make data persistent.
 -(void)writeToPlistFile {
     NSLog(@"listPath = %@", listPath);
     NSMutableArray *newListCompliments = [[NSMutableArray alloc] init];
@@ -237,8 +227,7 @@
 // compliment body.
 -(void)setRandomNotification {
     UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-    
-    // Could probably simplify this.
+
     NSDate *startDate = [[NSDate alloc] init];
     NSDate *endDate = [[NSDate alloc] init];
     NSDate *randomDate = [[NSDate alloc] init];
@@ -247,9 +236,6 @@
     NSInteger lowerBound = 0;
     NSInteger upperBound = [self.complimentItems count];
     NSInteger randomInt = lowerBound + arc4random() % (upperBound - lowerBound);
-    
-    // Test random integer.
-    NSLog(@"Random int: %ld", (long)randomInt);
     
     // If first time setting notification, use date 2 days from now.
     if (self.lastDate == nil) {
@@ -278,66 +264,16 @@
     
     NSDate *test = [[NSDate alloc] init];
     test = [test initWithTimeIntervalSinceNow:20];
-    self.lastDate = test;
+    //self.lastDate = test;
     
     localNotification.fireDate = randomDate;
     //localNotification.fireDate = test;
     CXComplimentItem *randomCompliment = [self.complimentItems objectAtIndex:randomInt];
     localNotification.alertBody = randomCompliment.itemText;
     localNotification.soundName = UILocalNotificationDefaultSoundName;
-    //localNotification.applicationIconBadgeNumber = 1;
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     
 }
-
-/*
- - (IBAction)setNotification:(id)sender {
- UILocalNotification *localNotification = [[UILocalNotification alloc] init];
- 
- // Could probably simplify this.
- NSDate *startDate = [[NSDate alloc] init];
- NSDate *endDate = [[NSDate alloc] init];
- NSDate *randomDate = [[NSDate alloc] init];
- NSTimeInterval randomInterval = 1;
- 
- // If first time setting notification, use date 2 days from now.
- if (self.lastDate == nil) {
- randomDate = [randomDate initWithTimeIntervalSinceNow:172800];
- }
- else {
- // First establish boundaries: earliest at 2 days - 4 hrs from last date and latest
- // at 2 days + 4 hrs from last date. Then use that interval to get a random interval.
- // Finally, add the random interval to the earliest date boundary to get a random
- // date.
- startDate = [startDate initWithTimeInterval:158400 sinceDate:self.lastDate];
- endDate = [endDate initWithTimeInterval:187200 sinceDate:self.lastDate];
- NSTimeInterval intervalTimeBlock = [endDate timeIntervalSinceDate:startDate];
- randomInterval = ((NSTimeInterval)arc4random() / ARC4RANDOM_MAX) * intervalTimeBlock;
- randomDate = [startDate dateByAddingTimeInterval:randomInterval];
- }
- 
- NSLog(@"Last date: %@", self.lastDate);
- self.lastDate = randomDate;
- 
- NSLog(@"Start date: %@", startDate);
- NSLog(@"End date: %@", endDate);
- NSLog(@"Random interval: %f", randomInterval);
- NSLog(@"Random date: %@", randomDate);
- NSLog(@"New last date: %@", self.lastDate);
- 
- NSDate *test = [[NSDate alloc] init];
- test = [test initWithTimeIntervalSinceNow:20];
- self.lastDate = test;
- //localNotification.fireDate = randomDate;
- localNotification.fireDate = test;
- CXComplimentItem *lastCompliment = [self.complimentItems objectAtIndex:[self.complimentItems count]-1];
- localNotification.alertBody = lastCompliment.itemText;
- localNotification.soundName = UILocalNotificationDefaultSoundName;
- //localNotification.applicationIconBadgeNumber = 1;
- [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
- 
- }
- */
 
 - (IBAction)writeToFile:(id)sender {
     [self writeToPlistFile];

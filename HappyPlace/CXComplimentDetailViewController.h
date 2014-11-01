@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CXComplimentItem.h"
+#import "CXComplimentListTableViewController.h"
 
 @interface CXComplimentDetailViewController : UIViewController
 
 @property (nonatomic) NSString *complimentText;
-@property (nonatomic, getter=isEditing) BOOL editing;
-@property (nonatomic, strong) NSLayoutConstraint *constraint;
+@property (nonatomic) NSInteger indexCompliment;
+@property (nonatomic) NSMutableArray *complimentItems;
+@property CXComplimentItem *complimentItem;
 
 @end
