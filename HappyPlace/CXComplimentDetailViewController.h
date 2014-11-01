@@ -11,5 +11,7 @@
 @interface CXComplimentDetailViewController : UIViewController
 
 @property (nonatomic) NSString *complimentText;
+@property (nonatomic, getter=isEditing) BOOL editing;
+@property (nonatomic, strong) NSLayoutConstraint *constraint;
 
 @end

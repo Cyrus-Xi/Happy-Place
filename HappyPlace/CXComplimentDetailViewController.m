@@ -37,6 +37,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)setEditing:(BOOL)flag animated:(BOOL)animated
+{
+    [super setEditing:flag animated:animated];
+    if (flag == YES){
+        _detailText.editable = YES;
+        // Change views to edit mode.
+    }
+    else {
+        // Save the changes if needed and change the views to noneditable.
+        _detailText.editable = NO;
+    }
+}
+
 /*
  #pragma mark - Navigation
  
