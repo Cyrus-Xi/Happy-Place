@@ -15,11 +15,6 @@
 @property (nonatomic) NSString *complimentText;
 @property (nonatomic) NSInteger indexCompliment;
 @property (nonatomic) NSMutableArray *complimentItems;
-//@property (nonatomic, getter=isEditing) BOOL editing;
-//@property (nonatomic, strong) NSLayoutConstraint *constraint;
 @property CXComplimentItem *complimentItem;
-//@property NSMutableArray *complimentItems;
-//@property CXComplimentListTableViewController *ex;
-
 
 @end

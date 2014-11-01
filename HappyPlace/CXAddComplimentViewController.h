@@ -13,5 +13,4 @@
 
 @property CXComplimentItem *complimentItem;
 
-
 @end

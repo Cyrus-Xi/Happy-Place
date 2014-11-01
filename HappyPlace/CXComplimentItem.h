@@ -11,7 +11,5 @@
 @interface CXComplimentItem : NSObject
 
 @property NSString *itemText;
-//@property NSString *itemAuthor;
-//@property (readonly) NSDate *dateSaidWritten;
 
 @end
