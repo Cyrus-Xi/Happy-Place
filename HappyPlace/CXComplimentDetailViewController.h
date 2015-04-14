@@ -10,7 +10,9 @@
 #import "CXComplimentItem.h"
 #import "CXComplimentListTableViewController.h"
 
-@interface CXComplimentDetailViewController : UIViewController
+@interface CXComplimentDetailViewController : UIViewController {
+    UITextView *messageTextView;
+}
 
 @property (nonatomic) NSString *complimentText;
 @property (nonatomic) NSInteger indexCompliment;
